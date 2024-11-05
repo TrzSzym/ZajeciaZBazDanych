@@ -1,7 +1,7 @@
 #Lab3 zadania
 ##zadanie 4
 
-```sql```
+```sql
 
 create table przetwory(
 id_przetworu INT primary key,
