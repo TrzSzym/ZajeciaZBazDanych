@@ -14,6 +14,9 @@ foreign key (id_wykonawcy) references postac(id_postaci),
 foreign key (id_konsumenta) references postac(id_postaci)
 );
 
+```
+```sql
+
 Insert Into przetwory values (
 default,
 default,
