@@ -1,8 +1,8 @@
 # Zadania lab4
 
-##Zadanie 1
+## Zadanie 1
 
-``sql
+```sql
 
 delete from postac where nazwa != "bjorn" and rodzaj="wiking" order by wiek desc limit 2;
 
