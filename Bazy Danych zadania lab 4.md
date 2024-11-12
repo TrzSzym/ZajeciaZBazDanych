@@ -54,3 +54,54 @@ update statek set max_ladownosc=(max_ladownosc*0.7) where data_wodowania like "1
 alter table postac add check(wiek<=1000);
 
 ```
+
+## Zadanie 4
+
+```sql
+
+alter table postac add check(wiek<=1000);
+
+```
+```sql
+
+create table marynarz like postac;
+insert into marynarz select * from postac where statek_nazwa is not null;
+
+```
+
+## Zadanie 5
+
+```sql
+
+update marynarz set statek_nazwa=null;
+
+```
+```sql
+
+delete from marynarz where nazwa!="bjorn" and rodzaj="wiking" limit 1;
+
+```
+```sql
+
+alter table postac drop foreign key postac_ibfk_1
+delete from statek where nazwa_statku like "%"
+
+```
+```sql
+
+drop table statek;
+
+```
+```sql
+
+create table zwierz (
+id int auto_increment primary key,
+nazwa varchar(80),
+wiek tinyint);
+
+```
+```sql
+
+insert into zwierz select id_postaci, nazwa, wiek from postac where rodzaj="drozd";
+
+```
