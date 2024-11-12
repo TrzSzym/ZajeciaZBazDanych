@@ -36,3 +36,21 @@ alter table postac change rodzaj rodzaj enum("wiking", "ptak", "kobieta", "syren
 insert into postac values ("92926123412", 25, "Gertruda Nieszczera", "syrena", "1999-12-12", "25", null, null);
 
 ```
+
+## Zadanie 3
+
+```sql
+
+update postac set statek_nazwa="maria" where nazwa like "%a%";
+
+```
+```sql
+
+update statek set max_ladownosc=(max_ladownosc*0.7) where data_wodowania like "19__-__-__" or data_wodowania like "2000-__-__";
+
+```
+```sql
+
+alter table postac add check(wiek<=1000);
+
+```
