@@ -87,6 +87,6 @@ select * from zasob where rodzaj is null
 ```
 ```sql
 
-select distinct rodzaj from zasob where rodzaj like "ba%" or rodzaj like "%os"
+select distinct rodzaj from zasob where nazwa like "ba%" or nazwa like "%os" order by rodzaj
 
 ```
