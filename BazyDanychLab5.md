@@ -24,3 +24,18 @@ select zasob.idZasobu, zasob.ilosc from ekwipunek, zasob where idKreatury like "
 ```
 
 ## Zadanie 2
+```sql
+
+select * from kreatura where rodzaj!="wiedzma" and udzwig>=50;
+
+```
+```sql
+
+select * from zasob where waga>2 and waga<5
+
+```
+```sql
+
+select * from kreatura where nazwa like "%or%" and udzwig>30 and udzwig<70;
+
+```
