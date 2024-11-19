@@ -56,3 +56,27 @@ select * from zasob where rodzaj is not null order by waga
 select * from kreatura where dataUr is not null order by dataUr limit 5;
 
 ```
+
+## Zadanie 4
+```sql
+
+select distinct rodzaj from zasob
+
+```
+```sql
+
+select concat(nazwa,"-",rodzaj) as "nazwa - rodzaj" from kreatura where rodzaj like "wi%"
+
+```
+```sql
+
+select nazwa, concat(ilosc*waga) as "waga calkowita" from zasob where year(dataPozyskania)>=2000 and year(dataPozyskania)<=2007
+
+```
+
+## Zadanie 5
+```sql
+
+
+
+```
