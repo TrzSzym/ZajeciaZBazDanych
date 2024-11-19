@@ -39,3 +39,20 @@ select * from zasob where waga>2 and waga<5
 select * from kreatura where nazwa like "%or%" and udzwig>30 and udzwig<70;
 
 ```
+
+## Zadanie 3
+```sql
+
+select * from zasob where dataPozyskania like "____-08-__" or "____-07-__"
+
+```
+```sql
+
+select * from zasob where rodzaj is not null order by waga
+
+```
+```sql
+
+select * from kreatura where dataUr is not null order by dataUr limit 5;
+
+```
