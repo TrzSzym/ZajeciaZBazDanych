@@ -1,4 +1,4 @@
-# Zadnaia lab 6
+# Zadania lab 6
 
 ## Zadanie 1
 ```sql
@@ -76,6 +76,24 @@ limit 5
 ```
 ```sql
 
-select k1.nazwa as nazwa_kreatury1, k2.nazwa as nazwa_kreatury2 from kreatura k1 join kreatura k2 on k1.idKreatury + 5=k2.idKreatury order by k1.idKreatury
+select concat(k1.nazwa,"-",k2.nazwa) from kreatura k1 join kreatura k2 on k1.idKreatury + 5=k2.idKreatury order by k1.idKreatury
+
+```
+
+## Zadanie 5
+
+```sql
+
+select distinct(kreatura.nazwa), avg(zasob.waga) from ekwipunek
+inner join kreatura on ekwipunek.idKreatury=kreatura.idKreatury
+inner join zasob on ekwipunek.idZasobu=zasob.idZasobu 
+where kreatura.rodzaj not like "wąż" or "małpa"
+group by kreatura.nazwa
+having sum(ekwipunek.ilosc)<30
+
+```
+```sql
+
+nie wiem :(
 
 ```
