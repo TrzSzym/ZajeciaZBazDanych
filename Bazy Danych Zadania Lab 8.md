@@ -46,3 +46,29 @@ begin
 end //
 
 ```
+
+## Zadanie 3
+
+```sql
+
+DELIMITER $$
+create procedure eliksir_sily(in ID INT)
+begin
+	update kreatura set udzwig=(udzwig*1.2) where id_kreatury = ID;
+end $$
+
+delimiter ;
+
+```
+```sql
+
+delimiter //
+create function DUZE(tekst varchar(100))
+returns VARCHAR(100)
+BEGIN
+RETURN upper(tekst);
+end //
+
+delimiter ;
+
+```
