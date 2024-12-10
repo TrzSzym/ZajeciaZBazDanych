@@ -31,6 +31,18 @@ delimiter ;
 
 ```sql
 
+create table archiwum_wypraw (id_wyprawy INT, nazwa VARCHAR(30), data_rozpoczecia DATE , data_zakonczenia date , kierwonik varchar(30));
 
+DELIMITER //
+create trigger tr_delete_wyprawa
+after delete on wyprawa
+for each row
+begin
+	insert into archiwum_wypraw values (old.id_wyprawy,
+    old.nazwa,
+    old.data_rozpoczecia,
+    old.data_zakonczenia,
+    (select k.nazwa from kreatury kinner join wyprawa w on  k.idKreatury=w.kierownik where k.idKreatury=old.w.kierownik));
+end //
 
 ```
