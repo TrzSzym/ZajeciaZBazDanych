@@ -25,7 +25,7 @@ end;//
 
 delimiter ;
 
-```
+``` 
 
 ## Zadanie 2
 
@@ -70,5 +70,37 @@ RETURN upper(tekst);
 end //
 
 delimiter ;
+
+```
+
+## Zadanie 4
+
+```sql
+
+create table system_alarmowy (
+id_alarmu int auto_increment primary key,
+wiadomosc Varchar(255)
+);
+
+```
+```sql
+
+create trigger alarm_tesciowa
+after insert on wyprawa
+for each row
+begin
+	declare uczestnicy varchar(255);
+    declare dziadek varchar(255);
+    
+    set uczestnicy = (select k.nazwa from wyprawa w inner join uczestnicy u on w.id_wyprawy = u.id_wyprawy
+    inner join kreatura k on u.id_uczestnika = k.idKreaury where w.id_wyprawy = new.id_wyprawy);
+    set dziadek = (select s.nazwa from wyprawa w inner join etapy_wyprawy e on w.id_wyprawy=e.id_wyprawy
+    inner join sektor s on e.id_sektora = s.id_sektora where w.id_wyprawy = new.id_wyprawy);
+		if uczestnicy like "%tesciowa%" then
+			if dziadek like "%dziadka%" then
+				insert into system_alarmowy(wiadomosc) values ("TESCIOWA NADCHODZI !!!!!");
+            end if;
+		end if;
+end; //
 
 ```
